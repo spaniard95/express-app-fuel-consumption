@@ -1,0 +1,14 @@
+version: "3.9"
+
+services:
+  car_fuel_consumption_app:
+    container_name: car_fuel_consumption
+    build: .
+    image: spaniard/car_fuel_consumption
+    ports:
+      - "3000:3000"
+    environment:
+      - PG_DB="car_fuel_consumption_db"
+      - PG_USER="spaniard"
+      - PG_PASSWORD="12345"
+      - PG_HOST="car_fuel_consumption_db"
